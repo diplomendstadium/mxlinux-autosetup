@@ -9,6 +9,8 @@ This Bash script streamlines the initial setup of a fresh [MX Linux](https://mxl
 - installing updates
 - installing software (see script for list of installed software)
 - activate firewall
+- tweak firefox a bit
+- add calendar to BashRC
 - small cleanup
 
 ## Quick Start
