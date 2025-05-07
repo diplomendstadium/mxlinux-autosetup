@@ -1,6 +1,6 @@
-# Automated setup script for MX Linux.
+# Automated setup script for MX Linux 🐧
 
-***This repo is still under construction, please do not use it!***
+***This repo is still under construction, so you better not use it!***
 
 This Bash script streamlines the initial setup of a fresh [MX Linux](https://mxlinux.org) installation with just one command.
 
