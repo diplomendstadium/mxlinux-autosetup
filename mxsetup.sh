@@ -3,7 +3,6 @@
 
 echo " "
 echo " "
-echo "----------------------------------------"
 cat << "EOF"
        .---.
       /     \
@@ -14,7 +13,6 @@ cat << "EOF"
    /`\_`>  <_/ \
    \__/'---'\__/
 EOF
-echo "----------------------------------------"
 echo " "
 
 sleep 1
@@ -150,10 +148,8 @@ sudo apt autoclean -y
 echo "" && sleep 3
 
 echo " "
-echo "----------------------------------------"
 echo "Done. System will restart in 60 seconds."
 echo "To abort please stop this script with Strg+C"
-echo "----------------------------------------"
 echo " "
 
 # reboot
