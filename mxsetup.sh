@@ -42,16 +42,17 @@ sudo apt install -y \
 # Install further software via flatpak
 sudo flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
 
-flatpak install -y /
-    org.torproject.torbrowser-launcher /
+flatpak install -y \
+    org.torproject.torbrowser-launcher \
     org.onlyoffice.desktopeditors
     
 
 # Activate and enable UFW firewall
-#echo "[INFO] Activate the firewall..."
-#sudo ufw default deny incoming
-#sudo ufw default allow outgoing
-#sudo ufw allow ssh
+echo "[INFO] Activate the firewall..."
+sudo ufw default deny incoming
+sudo ufw default allow outgoing
+sudo ufw allow ssh
+sudo ufw enable
 
 # Cleanup
 sudo apt autoremove -y --purge
