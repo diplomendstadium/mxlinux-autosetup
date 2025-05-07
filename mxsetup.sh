@@ -1,10 +1,5 @@
 #!/bin/bash
 
-# Ensure script is run with sudo/root privileges
-if [[ $EUID -ne 0 ]]; then
-    echo "[INFO] This script requires root rights. Start it again with sudo..."
-    exec sudo bash "$0" "$@"
-fi
 
 echo " "
 echo "----------------------------------------"
