@@ -16,7 +16,7 @@ This Bash script streamlines the initial setup of a fresh [MX Linux](https://mxl
 Run this one-liner in your terminal to download and execute the script:
 
 ```bash
-curl -s https://github.com/diplomendstadium/mxlinux-autosetup/raw/refs/heads/main/mxsetup.sh | sudo bash
+curl -s https://raw.githubusercontent.com/diplomendstadium/mxlinux-autosetup/refs/heads/main/mxsetup.sh | sudo bash
 ```
 
 ## Disclaimer
