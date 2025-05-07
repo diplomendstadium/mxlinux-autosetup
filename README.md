@@ -2,18 +2,18 @@
 
 ***This repo is still under construction, so you better not use it!***
 
-This Bash script streamlines the initial setup of a fresh [MX Linux](https://mxlinux.org) installation with just one command.
+This bash script streamlines the initial setup of a fresh [MX Linux](https://mxlinux.org) installation with just one command.
 
 ## Features
 
-- installing updates
-- installing software (see script for list of installed software)
-- activate firewall
-- tweak firefox a bit
+- install updates
+- install software (see script for list of installed software)
+- enable firewall
+- tweak firefox
 - add calendar to BashRC
 - small cleanup
 
-## Quick Start
+## Quick start
 
 Run this one-liner in your terminal to download and execute the script:
 
@@ -25,6 +25,6 @@ curl https://github.com/diplomendstadium/mxlinux-autosetup/main/mxsetup.sh | sud
 
 Use at your own risk. It's recommended to review and teak the script before running it.
 
-## History
+## History & Notes
 
-2025-05-07: Seems to work with MX-23.6
+2025-05-07: Seems to work on MX-23.6
