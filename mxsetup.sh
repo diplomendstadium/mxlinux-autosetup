@@ -15,7 +15,7 @@ sudo apt full-upgrade -y
 flatpak update -y
 
 # Installing Packages
-echo "[Info] Installing Software..."
+echo "[Info] Installing Software via apt..."
 sudo apt update
 sudo apt install -y \
     borgbackup \
@@ -34,9 +34,10 @@ sudo apt install -y \
     tor torsocks \
     vim
 
-# Install further software via flatpak
+# Install flatpaks
+echo "[Info] Setting up Flathub..."
 sudo flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
-
+echo "[Info] Installing Flatpaks..."
 flatpak install -y \
     org.torproject.torbrowser-launcher \
     org.onlyoffice.desktopeditors
