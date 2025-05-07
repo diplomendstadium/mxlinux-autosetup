@@ -62,7 +62,7 @@ sudo apt autoclean -y
 echo " "
 echo "----------------------------------------"
 echo "Done. System will restart in 30seconds."
-echo "To abort please stop this script with Strg+X"
+echo "To abort please stop this script with Strg+C"
 echo "----------------------------------------"
 echo " "
 
