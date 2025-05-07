@@ -22,9 +22,3 @@ curl https://github.com/diplomendstadium/mxlinux-autosetup/main/mxsetup.sh | sud
 ## Disclaimer
 
 Use at your own risk. It's recommended to review and teak the script before running it.
-
-## ToDo
-
-- set wallpaper
-- change timeserver
-- set hostname
