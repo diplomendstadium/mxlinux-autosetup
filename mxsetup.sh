@@ -1,9 +1,18 @@
 #!/bin/bash
 
+
 echo " "
 echo "----------------------------------------"
-echo "Welcome to the MX Linux Auto-Setup!"
-echo "https://github.com/diplomendstadium/mxlinux-autosetup/"
+cat << "EOF"
+       .---.
+      /     \
+      \.@-@./  Welcome to the MX Linux Auto-Setup!
+      /`\_/`\  https://github.com/diplomendstadium/mxlinux-autosetup/
+     //  _  \\
+    | \     )|_
+   /`\_`>  <_/ \
+   \__/'---'\__/
+EOF
 echo "----------------------------------------"
 echo " "
 
