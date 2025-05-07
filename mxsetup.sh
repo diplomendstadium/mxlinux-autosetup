@@ -41,6 +41,10 @@ flatpak install -y \
     org.torproject.torbrowser-launcher \
     org.onlyoffice.desktopeditors
     
+# Activate and enable UFW firewall
+echo "[INFO] Setting up SSH..."
+sudo apt install openssh-server
+sudo service ssh start
 
 # Activate and enable UFW firewall
 echo "[INFO] Activate the firewall..."
