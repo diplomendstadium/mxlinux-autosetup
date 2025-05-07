@@ -15,6 +15,11 @@ sudo apt full-upgrade -y
 echo "[Info] Relax, flatpak updates can take some time if there is nothing to do..."
 flatpak update -y
 
+# Time Server
+echo "[Info] Modifiying Time Server..."
+sed -i '8s/.*/pool eu.pool.ntp.org iburst minpoll 6 maxpoll 8/' /etc/chrony/chrony.conf
+
+
 # Installing Packages
 echo "[Info] Installing Software via apt..."
 sudo apt update
@@ -31,6 +36,7 @@ sudo apt install -y \
     kleopatra \
     magic-wormhole \
     onionshare onionshare-cli \
+    syncthing \
     thunderbird-l10n-de \
     tldr \
     tor torsocks \
@@ -56,22 +62,13 @@ sudo ufw default deny incoming
 sudo ufw default allow outgoing
 sudo ufw allow ssh
 sudo ufw allow 9090 # For Cockpit
+sudo ufw allow syncthing
 sudo ufw enable
 
 # Cleanup
 sudo apt autoremove -y --purge
 sudo apt autoclean -y
 
-
-# Set wallpaper
-echo "[INFO] Working on a new Wallpaper..."
-#WALLPAPER_URL="https://www.schloss-lichtenstein.de/images/os_imagegallery_109/original/1.jpg"
-#WALLPAPER_NAME="lichtenstein.jpg"
-WALLPAPER_URL="https://wallpapers.com/images/hd/linux-penguin-and-rainbow-background-imsv6hxt0e8zcl7m.jpg"
-WALLPAPER_NAME="linux.jpg"
-WALLPAPER_PATH="/home/$USER/$WALLPAPER_NAME"
-curl -L "$WALLPAPER_URL" -o "$WALLPAPER_PATH"
-xwallpaper --zoom $WALLPAPER_PATH
 
 echo " "
 echo "----------------------------------------"
