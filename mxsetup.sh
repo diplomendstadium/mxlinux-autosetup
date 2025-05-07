@@ -12,6 +12,7 @@ echo " "
 echo "[Info] Updating the system..."
 sudo apt update
 sudo apt full-upgrade -y
+echo "[Info] Relax, flatpak updates can take some time if there is nothing to do..."
 flatpak update -y
 
 # Installing Packages
