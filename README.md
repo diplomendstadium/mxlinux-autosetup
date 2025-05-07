@@ -16,9 +16,15 @@ This Bash script streamlines the initial setup of a fresh [MX Linux](https://mxl
 Run this one-liner in your terminal to download and execute the script:
 
 ```bash
-curl https://raw.githubusercontent.com/diplomendstadium/mxlinux-autosetup/refs/heads/main/mxsetup.sh | sudo bash
+curl https://github.com/diplomendstadium/mxlinux-autosetup/main/mxsetup.sh | sudo bash
 ```
 
 ## Disclaimer
 
 Use at your own risk. It's recommended to review and teak the script before running it.
+
+## ToDo
+
+- set wallpaper
+- change timeserver
+- set hostname
