@@ -134,6 +134,7 @@ sudo tee /etc/firefox/policies/policies.json > /dev/null <<EOF
       "Enabled":  true,
       "ProviderURL": "https://family.adguard-dns.com/dns-query",
       "Locked": true,
+      "ExcludedDomains": ["example.com"],
       "Fallback": false,
     }
   }
