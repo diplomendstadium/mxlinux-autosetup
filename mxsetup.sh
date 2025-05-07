@@ -1,6 +1,5 @@
 #!/bin/bash
 
-
 echo " "
 echo "----------------------------------------"
 echo "Welcome to the MX Linux Auto-Setup!"
@@ -10,18 +9,12 @@ echo " "
 
 sleep 1
 echo ""
-echo "If you have not looked at the contents of this script, you should now cancel with Ctrl + C!"
+echo "If you have not looked at the contents of this script thoroughly or have already executed it, you should cancel as fast as possible with Ctrl + C!"
 echo ""
-sleep 5
+sleep 10
 
 # change to users home directory
 cd ~
-
-# Modify BashRC
-echo 'echo "With power comes responsibility."' >> .bashrc
-echo 'echo""' >> .bashrc
-echo 'date' >> .bashrc
-echo 'ncal -Mbw' >> .bashrc
 
 # Update the System
 echo "[Info] Updating the system..."
@@ -29,6 +22,14 @@ sudo apt update
 sudo apt full-upgrade -y
 echo "[Info] Relax, flatpak updates can take some time if there is nothing to do..."
 flatpak update -y
+echo "" && sleep 3
+
+# Modify BashRC
+echo "[Info] Changing BashRC..."
+echo 'echo "With power comes responsibility."' >> .bashrc
+echo 'echo""' >> .bashrc
+echo 'date' >> .bashrc
+echo 'ncal -Mbw' >> .bashrc
 echo "" && sleep 3
 
 # Installing Packages
@@ -55,9 +56,9 @@ sudo apt install -y \
     tor torsocks \
     veracrypt \
     vim \
-#    virt-manager \
+    virt-manager \
     virtualbox virtualbox-ext-pack virtualbox-guest-additions-iso \
-    xwallpaper
+    w3m
 echo "" && sleep 3
 
 # Install flatpaks
@@ -99,11 +100,38 @@ sudo ufw allow syncthing
 sudo ufw enable
 echo "" && sleep 3
 
+# Firefox
+# https://mozilla.github.io/policy-templates/ and https://linuxconfig.org/how-to-customize-firefox-using-the-policies-json-file for more info
+echo "[INFO] Creating Policies for Firefox..."
+sudo mkdir -p /etc/firefox/policies
+sudo tee /etc/firefox/policies/policies.json > /dev/null <<EOF
+{
+  "policies": {
+    "DisableTelemetry": true,
+    "Extensions": {
+      "Install": [
+        "https://addons.mozilla.org/firefox/downloads/file/4458450/ublock_origin-1.63.2.xpi"
+      ]
+    },
+    "SanitizeOnShutdown": {
+      "Cache": true,
+      "Cookies": true,
+      "FormData": true,
+      "History": true,
+      "Sessions": true,
+      "SiteSettings": true,
+      "Locked": true
+    }
+  }
+}
+EOF
+echo "" && sleep 3
+
 # Cleanup
+echo "[INFO] Cleaning the system..."
 sudo apt autoremove -y --purge
 sudo apt autoclean -y
 echo "" && sleep 3
-
 
 echo " "
 echo "----------------------------------------"
