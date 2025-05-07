@@ -2,11 +2,14 @@
 
 ***This repo is still under construction, please do not use it!***
 
-This Bash script streamlines the initial setup of a fresh MX Linux installation by installing essential packages, applying system tweaks, and configuring your environment with just one command.
+This Bash script streamlines the initial setup of a fresh [MX Linux](https://mxlinux.org) installation with just one command.
 
 ## Features
 
-- ...
+- installing updates
+- installing software (see script for list of installed software)
+- activate firewall
+- small cleanup
 
 ## Quick Start
 
