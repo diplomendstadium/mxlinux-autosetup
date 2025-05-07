@@ -38,7 +38,10 @@ sudo apt install -y \
     thunderbird-l10n-de \
     tldr \
     tor torsocks \
+    veracrypt \
     vim \
+    virt-manager \
+    virtualbox virtualbox-ext-pack virtualbox-guest-additions-iso \
     xwallpaper
 
 # Install flatpaks
@@ -51,9 +54,16 @@ flatpak install -y \
 
 # AppImages
 echo "[Info] Downloading AppImages..."
-curl -0L https://github.com/cryptomator/cryptomator/releases/download/1.16.0/cryptomator-1.16.0-x86_64.AppImage
-sudo chmod +x cryptomator-1.16.0-x86_64.AppImage
-    
+curl -OL https://github.com/cryptomator/cryptomator/releases/download/1.16.0/cryptomator-1.16.0-x86_64.AppImage
+sudo chmod u+x cryptomator-1.16.0-x86_64.AppImage
+
+# Signal
+echo "[Info] Adding Signal Messenger..."
+wget -O- https://updates.signal.org/desktop/apt/keys.asc | gpg --dearmor > signal-desktop-keyring.gpg
+cat signal-desktop-keyring.gpg | sudo tee /usr/share/keyrings/signal-desktop-keyring.gpg > /dev/null
+echo 'deb [arch=amd64 signed-by=/usr/share/keyrings/signal-desktop-keyring.gpg] https://updates.signal.org/desktop/apt xenial main' | sudo tee /etc/apt/sources.list.d/signal-xenial.list
+sudo apt update && sudo apt install signal-desktop
+
 # Activate and enable UFW firewall
 echo "[INFO] Setting up SSH..."
 sudo apt install openssh-server
