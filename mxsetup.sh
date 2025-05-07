@@ -15,6 +15,19 @@ sudo apt full-upgrade -y
 echo "[Info] Relax, flatpak updates can take some time if there is nothing to do..."
 flatpak update -y
 
+# Set wallpaper
+echo "[INFO] Working on a new Wallpaper..."
+WALLPAPER_URL="https://www.schloss-lichtenstein.de/images/os_imagegallery_109/original/1.jpg"
+WALLPAPER_NAME="lichtenstein.jpg"
+#WALLPAPER_URL="https://wallpapers.com/images/hd/linux-penguin-and-rainbow-background-imsv6hxt0e8zcl7m.jpg"
+#WALLPAPER_NAME="linux.jpg"
+WALLPAPER_PATH="/home/$USER/$WALLPAPER_NAME"
+curl -L "$WALLPAPER_URL" -o "$WALLPAPER_PATH"
+sudo -u "$SUDO_USER" xfconf-query \
+    --channel xfce4-desktop \
+    --property /backdrop/screen0/monitor0/image-path \
+    --set "$WALLPAPER_PATH"
+
 # Installing Packages
 echo "[Info] Installing Software via apt..."
 sudo apt update
