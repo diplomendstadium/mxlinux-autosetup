@@ -8,17 +8,15 @@ echo "https://github.com/diplomendstadium/mxlinux-autosetup/"
 echo "----------------------------------------"
 echo " "
 
+# change to users home directory
+cd ~
+
 # Update the System
 echo "[Info] Updating the system..."
 sudo apt update
 sudo apt full-upgrade -y
 echo "[Info] Relax, flatpak updates can take some time if there is nothing to do..."
 flatpak update -y
-
-# Time Server
-echo "[Info] Modifiying Time Server..."
-sed -i '8s/.*/pool eu.pool.ntp.org iburst minpoll 6 maxpoll 8/' /etc/chrony/chrony.conf
-
 
 # Installing Packages
 echo "[Info] Installing Software via apt..."
@@ -50,6 +48,11 @@ echo "[Info] Installing Flatpaks..."
 flatpak install -y \
     org.torproject.torbrowser-launcher \
     org.onlyoffice.desktopeditors
+
+# AppImages
+echo "[Info] Downloading AppImages..."
+curl -0L https://github.com/cryptomator/cryptomator/releases/download/1.16.0/cryptomator-1.16.0-x86_64.AppImage
+sudo chmod +x cryptomator-1.16.0-x86_64.AppImage
     
 # Activate and enable UFW firewall
 echo "[INFO] Setting up SSH..."
