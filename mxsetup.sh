@@ -131,6 +131,12 @@ sudo tee /etc/firefox/policies/policies.json > /dev/null <<EOF
       "Sessions": true,
       "SiteSettings": true,
       "Locked": true
+    },
+    "DNSOverHTTPS": {
+      "Enabled":  true,
+      "ProviderURL": "https://family.adguard-dns.com/dns-query",
+      "Locked": true,
+      "Fallback": false,
     }
   }
 }
